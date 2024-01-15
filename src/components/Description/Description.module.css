@@ -1,0 +1,52 @@
+.descriptionBox {
+  background-image: linear-gradient(
+      rgba(66, 60, 46, 0.7),
+      rgba(66, 64, 46, 0.7)
+    ),
+    url('./image/cafe.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  padding: 260px 20px 60px;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.title {
+  margin-bottom: 40px;
+  font-size: 22px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 375px) {
+  .text {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .text {
+    font-size: 22px;
+  }
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .text {
+    font-size: 28px;
+  }
+  .title {
+    font-size: 44px;
+  }
+}
