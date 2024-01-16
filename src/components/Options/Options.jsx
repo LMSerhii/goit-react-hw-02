@@ -37,27 +37,27 @@ const Options = ({ assessments, setAssessments }) => {
   };
 
   return (
-    <ul className={css.options}>
-      <li key="Good">
+    <ul className={css.list}>
+      <li className={css.item} key="Good">
         <Button onClick={updateGood}>
           <FaFaceGrinHearts />
           Good
         </Button>
       </li>
-      <li key="Neutral">
+      <li className={css.item} key="Neutral">
         <Button onClick={updateNeutral}>
           <FaFaceFlushed />
           Neutral
         </Button>
       </li>
-      <li key="Bad">
+      <li className={css.item} key="Bad">
         <Button onClick={updateBad}>
           <FaFaceFrown />
           Bad
         </Button>
       </li>
       {Boolean(totalFeedback) && (
-        <li key="Reset">
+        <li className={css.item} key="Reset">
           <Button onClick={updateReset}>
             <FaFaceDizzy />
             Reset
