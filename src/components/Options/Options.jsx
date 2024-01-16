@@ -1,5 +1,9 @@
 import css from './Options.module.css';
 import { Button } from '../Button/Button';
+import { FaFaceGrinHearts } from 'react-icons/fa6';
+import { FaFaceFrown } from 'react-icons/fa6';
+import { FaFaceFlushed } from 'react-icons/fa6';
+import { FaFaceDizzy } from 'react-icons/fa6';
 
 const Options = ({ assessments, setAssessments }) => {
   const { bad, good, neutral } = assessments;
@@ -35,17 +39,29 @@ const Options = ({ assessments, setAssessments }) => {
   return (
     <ul className={css.options}>
       <li key="Good">
-        <Button onClick={updateGood}>Good</Button>
+        <Button onClick={updateGood}>
+          <FaFaceGrinHearts />
+          Good
+        </Button>
       </li>
       <li key="Neutral">
-        <Button onClick={updateNeutral}>Neutral</Button>
+        <Button onClick={updateNeutral}>
+          <FaFaceFlushed />
+          Neutral
+        </Button>
       </li>
       <li key="Bad">
-        <Button onClick={updateBad}>Bad</Button>
+        <Button onClick={updateBad}>
+          <FaFaceFrown />
+          Bad
+        </Button>
       </li>
       {Boolean(totalFeedback) && (
         <li key="Reset">
-          <Button onClick={updateReset}>Reset</Button>
+          <Button onClick={updateReset}>
+            <FaFaceDizzy />
+            Reset
+          </Button>
         </li>
       )}
     </ul>

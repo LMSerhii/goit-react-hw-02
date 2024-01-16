@@ -5,19 +5,21 @@ const Feedback = ({ assessments: { bad, good, neutral } }) => {
 
   const positiveFeedback = Math.round(((good + neutral) / totalFeedback) * 100);
 
+  const FeedbackList = () => {
+    return (
+      <ul className={css.list}>
+        <li className={css.item}>Good: {good}</li>
+        <li className={css.item}>Neutral: {neutral}</li>
+        <li className={css.item}>Bad: {bad}</li>
+        <li className={css.item}>Total: {totalFeedback}</li>
+        <li className={css.item}>Positive: {positiveFeedback}%</li>
+      </ul>
+    );
+  };
+
   return (
     <div className={css.feedback}>
-      {!totalFeedback ? (
-        <p>No feedback yet</p>
-      ) : (
-        <ul>
-          <li>Good: {good}</li>
-          <li>Neutral: {neutral}</li>
-          <li>Bad: {bad}</li>
-          <li>Total: {totalFeedback}</li>
-          <li>Positive: {positiveFeedback}%</li>
-        </ul>
-      )}
+      {!totalFeedback ? <p>No feedback yet</p> : <FeedbackList />}
     </div>
   );
 };

@@ -4,3 +4,12 @@
   border: 2px solid orange;
   border-radius: 8px;
 }
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item {
+}
