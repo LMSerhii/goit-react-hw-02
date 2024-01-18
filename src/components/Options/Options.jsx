@@ -9,22 +9,10 @@ const Options = ({ assessments, setAssessments }) => {
   const { bad, good, neutral } = assessments;
   const totalFeedback = good + neutral + bad;
 
-  const updateGood = () => {
+  const onUpdate = option => {
     setAssessments({
       ...assessments,
-      good: assessments.good + 1,
-    });
-  };
-  const updateNeutral = () => {
-    setAssessments({
-      ...assessments,
-      neutral: assessments.neutral + 1,
-    });
-  };
-  const updateBad = () => {
-    setAssessments({
-      ...assessments,
-      bad: assessments.bad + 1,
+      [option]: assessments[option] + 1,
     });
   };
 
@@ -38,20 +26,20 @@ const Options = ({ assessments, setAssessments }) => {
 
   return (
     <ul className={css.list}>
-      <li className={css.item} key="Good">
-        <Button onClick={updateGood}>
+      <li className={css.item} key="good">
+        <Button onClick={() => onUpdate('good')}>
           <FaFaceGrinHearts />
           Good
         </Button>
       </li>
-      <li className={css.item} key="Neutral">
-        <Button onClick={updateNeutral}>
+      <li className={css.item} key="neutral">
+        <Button onClick={() => onUpdate('neutral')}>
           <FaFaceFlushed />
           Neutral
         </Button>
       </li>
-      <li className={css.item} key="Bad">
-        <Button onClick={updateBad}>
+      <li className={css.item} key="bad">
+        <Button onClick={() => onUpdate('bad')}>
           <FaFaceFrown />
           Bad
         </Button>
