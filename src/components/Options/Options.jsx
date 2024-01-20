@@ -4,6 +4,7 @@ import { FaFaceGrinHearts } from 'react-icons/fa6';
 import { FaFaceFrown } from 'react-icons/fa6';
 import { FaFaceFlushed } from 'react-icons/fa6';
 import { FaFaceDizzy } from 'react-icons/fa6';
+import { common } from '../../js/common';
 
 const Options = ({ assessments, setAssessments }) => {
   const { bad, good, neutral } = assessments;
@@ -17,11 +18,7 @@ const Options = ({ assessments, setAssessments }) => {
   };
 
   const updateReset = () => {
-    setAssessments({
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    });
+    setAssessments(common.INITAL_ASSESSMENTS);
   };
 
   return (

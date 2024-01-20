@@ -3,22 +3,16 @@ import { Description } from './Description/Description';
 import { Options } from './Options/Options';
 import { Feedback } from './Feedback/Feedback';
 import { load, save } from '../js/storage';
+import { common } from '../js/common';
 import './App.css';
 
+const getInitialAssessments = () => {
+  const savedAssessments = load('saved-assessments');
+  return savedAssessments ? savedAssessments : common.INITAL_ASSESSMENTS;
+};
+
 function App() {
-  const [assessments, setAssessments] = useState(() => {
-    const savedAssessments = load('saved-assessments');
-
-    if (savedAssessments) {
-      return savedAssessments;
-    }
-
-    return {
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    };
-  });
+  const [assessments, setAssessments] = useState(getInitialAssessments);
 
   useEffect(() => {
     save('saved-assessments', assessments);
